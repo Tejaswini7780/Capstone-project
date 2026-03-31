@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: teja-app-ingress
+
+
+
+spec:
+  rules:
+  - host: capstone-app.teja.me
+    http:
+      paths:
+
+      - path: /
+        pathType: Prefix
+        backend: 
+          service:
+            name: ui-service
+            port:
+              number: 80
